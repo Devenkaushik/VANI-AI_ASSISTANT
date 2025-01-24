@@ -1,154 +1,97 @@
-####                                                             iiii
-####                                                            i::::i
-####                                                             iiii
-####
-#### vvvvvvv           vvvvvvvaaaaaaaaaaaaa  nnnn  nnnnnnnn    iiiiiii
-####  v:::::v         v:::::v a::::::::::::a n:::nn::::::::nn  i:::::i
-####   v:::::v       v:::::v  aaaaaaaaa:::::an::::::::::::::nn  i::::i
-####    v:::::v     v:::::v            a::::ann:::::::::::::::n i::::i
-####     v:::::v   v:::::v      aaaaaaa:::::a  n:::::nnnn:::::n i::::i
-####      v:::::v v:::::v     aa::::::::::::a  n::::n    n::::n i::::i
-####       v:::::v:::::v     a::::aaaa::::::a  n::::n    n::::n i::::i
-####        v:::::::::v     a::::a    a:::::a  n::::n    n::::n i::::i
-####         v:::::::v      a::::a    a:::::a  n::::n    n::::ni::::::i
-####          v:::::v       a:::::aaaa::::::a  n::::n    n::::ni::::::i
-####           v:::v         a::::::::::aa:::a n::::n    n::::ni::::::i
-####            vvv           aaaaaaaaaa  aaaa nnnnnn    nnnnnniiiiiiii
-####
-####                                         -Your own personal Assistant
+VANI - Your AI Assistant
 
+Welcome to Vani, your personalized AI assistant! Use voice or text to interact seamlessly, get tasks done quickly, and make your daily life easier.
+🚀 Key Features
 
-#### Video Demo:  https://youtu.be/Jw4GI6R_o-o?si=GgZhNYenJ36uPOSm
+    Dual Modes: Communicate through voice or text.
+    Web Actions: Open saved websites or add new ones to your directory.
+    YouTube Searches: Generate direct search links for any topic.
+    AI Responses: Smart and contextual replies with Gemini AI.
+    Custom Writing: Generate personalized content with ease.
+    Easy Switching: Change between voice and text modes anytime.
+    Smooth Operation: Multi-threaded setup for quick, uninterrupted tasks.
 
-## **Overview**
-Vani is a virtual AI assistant capable of responding to user commands, performing tasks like opening websites, searching content, generating AI responses, and interacting via text or speech.
+🛠️ How to Set Up
+1️⃣ Prerequisites
 
----
+    Python 3.6 or higher
+    pip (Python package installer)
 
-## **How It Works**
-The assistant operates in two modes:
-1. **"say"**: Voice-based interaction (requires microphone input).
-2. **"type"**: Text-based interaction.
+2️⃣ Install and Run
 
-The user can give commands by prefixing their input with **`vani`**.
+    Clone this repository:
 
----
+git clone https://github.com/Devenkaushik/VANI-AI_ASSISTANT.git
+cd VANI-AI_ASSISTANT
 
-## **Main Features**
-- **Voice/Text Interaction**: Users can interact with Vani using speech or text input.
-- **Web Handling**:
-  - Open pre-saved or user-defined websites.
-  - Add new websites to Vani's dictionary.
-- **YouTube Search**: Generate a YouTube search link based on queries.
-- **AI-Powered Responses**: Leverages Gemini AI for generating contextual replies.
-- **Custom Writing**: Handles content generation tasks upon request.
-- **Dynamic Mode Switching**: Switch between "say" (speech) and "type" (text) modes during interaction.
-- **Threaded Initialization**: Ensures smooth startup without blocking the main program.
+Install all required libraries:
 
----
+pip install -r requirements.txt
 
-## **Dependencies**
-- `pyttsx3` (Text-to-Speech)
-- `colorama` (Terminal text styling)
-- `speech recognition` (Voice input)
-- Threading (Async Initialization)
-- Custom Functions:
-  - `mode()`: Sets communication mode.
-  - `initialise_gemini()`: Initializes Gemini AI.
-  - `ai()`: Processes user input and generates responses.
-  - `open_webs()`: Opens user-requested websites.
-  - `gen_yt_vdo()`: Generates YouTube search links.
-  - `write()`: writing functionality.
-  - `add_website()`: Adds websites to Vani's dictionary.
-  - `speech_r()`: Captures voice input.
+Launch Vani:
 
----
+    python project.py
 
-## **How to Run**
-1. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. **Run the Script**:
-   ```bash
-   python project.py
-   ```
-3. **Follow Prompts**:
-   - Choose the communication mode (**say/type**).
-   - Start commands with **`vani`**.
+    Follow the on-screen instructions to choose a mode: voice (say) or text (type).
 
----
+💬 How to Use
 
-## **Commands**
-| Command                         | Description                                           |
-|---------------------------------|-------------------------------------------------------|
-| `vani can you exit`             | Exits the program.                                    |
-| `vani open [website]`           | Opens a specific website.                             |
-| `vani search [query]`           | Searches for the query on YouTube.                    |
-| `vani can you write`            | Handles content writing tasks.                        |
-| `vani can you change mode`      | Switches between **say** and **type** modes.          |
-| `vani can you add website`      | Adds a new website to Vani's saved dictionary.        |
+    All commands start with the prefix vani.
+    Choose between voice or text to interact.
 
----
+Command	What It Does
+vani open [website]	Opens the specified website.
+vani search [query]	Searches YouTube for the given query.
+vani can you add website	Adds a website to Vani's saved list.
+vani can you write	Helps with custom writing tasks.
+vani can you change mode	Switches between voice and text input modes.
+vani can you exit	Exits the assistant.
+📂 Files in This Project
+Core Files:
 
-#### **Files and Their Functionality**
-1. *Core Script* : project.py
-- # Code Walkthrough of `project.py`:
+    project.py: The main file where all the logic is implemented.
+    websites.csv: Stores website names and URLs for dynamic access.
+    .env: Keeps sensitive information like API keys secure.
 
-The main logic resides in the `main()` function, which works as follows:
+Main Functions:
 
-1. **Mode Selection**:
-   - Calls `mode()` to decide between "say" or "type" modes.
-2. **AI Initialization**:
-   - Starts a separate thread for Gemini AI initialization using `threading.Thread()`.
-3. **Input Handling**:
-   - **"say" mode**: Captures voice input using `speech_r()`.
-   - **"type" mode**: Takes user input from the terminal.
-4. **Command Execution**:
-   - Opens websites, searches on YouTube, handles writing tasks, or switches modes.
-5. **AI Response**:
-   - Processes user input via `ai()` and responds through text or speech (`pyttsx3`).
-6. **Graceful Exit**: Program ends when the user says **`vani can you exit`**.
+    mode(): Lets you choose between text or voice input.
+    initialise_gemini(): Sets up AI response capabilities.
+    ai(): Processes your input and generates helpful responses.
+    open_webs(): Opens user-specified websites.
+    gen_yt_vdo(): Creates YouTube search links for your queries.
+    add_website(): Adds new websites to the list.
+    speech_r(): Captures and interprets voice commands.
 
-2. *Data File* : websites.csv
+⚙️ How Vani Works
 
-**Purpose**:
-- Stores website names and their corresponding URLs.
-**Functions**:
-- Read and update website entries dynamically.
-- Interacts with the core script to ensure seamless website management.
+    Choose the mode: say (voice) or type (keyboard).
+    Use the vani prefix to start your commands.
+    Vani performs tasks such as opening websites, generating search results, or responding with AI-generated text.
+    Exit anytime by saying or typing vani can you exit.
 
-3. *Environment File*: .env
+🛡️ Error Handling
 
-**Purpose**:
-- Securely stores API keys for the Google Generative AI integration.
-**Functionality**:
-- Externalizes sensitive information for better security and maintainability.
+    Friendly prompts for invalid input.
+    Recovers smoothly from network or API issues.
+    Reminders to start commands with the vani prefix for accurate results.
 
----
+🌟 Example Conversation
 
-## **Error Handling**
-- Handles missing or invalid inputs gracefully.
-- Catches exceptions during text-to-speech processing.
-- Reminds users to prefix inputs with **`vani`** for valid commands.
-
----
-
-## **Example Usage**
-```text
-> Vani: Hello! How can I assist you today?
+> Vani: Hello! How can I help you today?
 > User: vani open Google
 > Vani: Opening Google...
-> User: vani can you search Python tutorials on youtube
-> Vani: Searching YouTube for 'Python tutorials'.
+> User: vani search "Python tutorials on YouTube"
+> Vani: Searching YouTube for 'Python tutorials'...
 > User: vani can you exit
-> Vani: Goodbye!
-```
+> Vani: Goodbye! Have a great day!
 
----
+🚧 Known Limitations
 
-## **Known Limitations**
-- Voice recognition may fail in noisy environments.
-- AI responses depend on the quality of the Gemini AI API.
-- Requires a stable internet connection.
----
+    Voice recognition might not work perfectly in noisy areas.
+    AI responses depend on your internet connection.
+    You may need to refine your commands for specific use cases.
+
+🎉 Start Exploring Vani Today
+
+Vani is here to simplify your daily tasks. Download, set up, and start using your own intelligent assistant! 😊
