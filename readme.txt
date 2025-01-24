@@ -1,39 +1,42 @@
-VANI - Your AI Assistant
+# VANI - Your AI Assistant
 
 Welcome to Vani, your personalized AI assistant! Use voice or text to interact seamlessly, get tasks done quickly, and make your daily life easier.
-🚀 Key Features
 
-    Dual Modes: Communicate through voice or text.
-    Web Actions: Open saved websites or add new ones to your directory.
-    YouTube Searches: Generate direct search links for any topic.
-    AI Responses: Smart and contextual replies with Gemini AI.
-    Custom Writing: Generate personalized content with ease.
-    Easy Switching: Change between voice and text modes anytime.
-    Smooth Operation: Multi-threaded setup for quick, uninterrupted tasks.
+## 🚀 Key Features
 
-🛠️ How to Set Up
-1️⃣ Prerequisites
+- **Dual Modes**: Communicate through voice or text.
+- **Web Actions**: Open saved websites or add new ones to your directory.
+- **YouTube Searches**: Generate direct search links for any topic.
+- **AI Responses**: Smart and contextual replies with Gemini AI.
+- **Custom Writing**: Generate personalized content with ease.
+- **Easy Switching**: Change between voice and text modes anytime.
+- **Smooth Operation**: Multi-threaded setup for quick, uninterrupted tasks.
 
-    Python 3.6 or higher
-    pip (Python package installer)
+## 🛠️ How to Set Up
 
-2️⃣ Install and Run
+### 1️⃣ Prerequisites
 
-    Clone this repository:
+- Python 3.6 or higher
+- pip (Python package installer)
 
+### 2️⃣ Install and Run
+
+Clone this repository:
+
+```bash
 git clone https://github.com/Devenkaushik/VANI-AI_ASSISTANT.git
 cd VANI-AI_ASSISTANT
+## Install and Run
 
 Install all required libraries:
 
+```bash
 pip install -r requirements.txt
-
 Launch Vani:
 
-    python project.py
+python project.py
 
-    Follow the on-screen instructions to choose a mode: voice (say) or text (type).
-
+Follow the on-screen instructions to choose a mode: voice (say) or text (type).
 💬 How to Use
 
     All commands start with the prefix vani.
@@ -78,13 +81,13 @@ Main Functions:
 
 🌟 Example Conversation
 
-> Vani: Hello! How can I help you today?
-> User: vani open Google
-> Vani: Opening Google...
-> User: vani search "Python tutorials on YouTube"
-> Vani: Searching YouTube for 'Python tutorials'...
-> User: vani can you exit
-> Vani: Goodbye! Have a great day!
+    Vani: Hello! How can I help you today?
+    User: vani open Google
+    Vani: Opening Google...
+    User: vani search "Python tutorials on YouTube"
+    Vani: Searching YouTube for 'Python tutorials'...
+    User: vani can you exit
+    Vani: Goodbye! Have a great day!
 
 🚧 Known Limitations
 
@@ -95,3 +98,6 @@ Main Functions:
 🎉 Start Exploring Vani Today
 
 Vani is here to simplify your daily tasks. Download, set up, and start using your own intelligent assistant! 😊
+
+
+You can now directly copy and paste the content into your `README.md` file!
