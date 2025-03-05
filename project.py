@@ -75,12 +75,24 @@ def main():
                 break
             elif "opening" in user_said or "open" in user_said:
                 extra_info = open_webs(user_said)
-            elif "search" in user_said in user_said:
-                if link := gen_yt_vdo(user_said):
+            elif "search" in user_said:
+                 if "on youtube" in user_said:
+                     link = gen_yt_vdo(user_said)
+                 elif "on google" in user_said:
+                      link = gen_google_search(user_said)
+                 else:
+                      link = None
+
+                 if link:
+                      webbrowser.open(link)
+                      extra_info = "Search completed successfully."
+                 else:
+                      extra_info = "User tried searching but didn't specify a valid platform."
+                 if link := gen_yt_vdo(user_said):
                     webbrowser.open(link)
                     extra_info = f"we have searched successfully on youtube."
-                else:
-                    extra_info = f"just say yes and tell them to {Vani_mode} 'search 'thing they want to seach' on youtube', if user asked, can you search on youtube? because you can... but not other website yet. on the other and if they ask for totaly different so tell them that..."
+                 else:
+                      extra_info = f"just say yes and tell them to {Vani_mode} 'search 'thing they want to seach' on youtube', if user asked, can you search on youtube? because you can... but not other website yet. on the other and if they ask for totaly different so tell them that..."
             elif "vani can you write" in user_said:
                 extra_info = write(user_said)
             elif "vani can you change mode" in user_said:
@@ -190,7 +202,13 @@ def open_webs(user_said):
             f"User asked for a website to open {webapp}, and It is opening successfully"
         )
 
-
+def gen_google_search(google_search):
+    if searched := re.search(r"search (.+) on google", google_search):
+        google_search = searched.group(1)
+        google_search = google_search.strip().replace(" ", "+")
+        return f"https://www.google.com/search?q={google_search}"
+    else:
+        return False
 def is_valid_url(url):
     pattern = re.compile(
         r"^(https?:\/\/)"
@@ -449,4 +467,3 @@ vvvvvvv           vvvvvvvaaaaaaaaaaaaa  nnnn  nnnnnnnn    iiiiiii
         + "Some kind of unexpected error occurred, please share this to the developer, log:\n"
         + str(e)
     )
-
